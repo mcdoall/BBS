@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="Keywords" content="게시판 목록1" />
+<meta name="Keywords" content="게시판 목록" />
 <meta name="Description" content="게시판 목록" />
 <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen" />
 <title>${boardNm }</title>
