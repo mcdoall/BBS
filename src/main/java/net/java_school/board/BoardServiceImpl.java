@@ -1,17 +1,22 @@
 package net.java_school.board;
 
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import net.java_school.commons.PagingHelper;
 import net.java_school.mybatis.BoardMapper;
 
+@Service
 public class BoardServiceImpl implements BoardService {
+	
+	@Autowired
 	private BoardMapper boardMapper;
 	private PagingHelper pagingHelper; //페이징 처리 유틸리티 클래스
 	
-	public void setBoardMapper(BoardMapper boardMapper) {
+	/*public void setBoardMapper(BoardMapper boardMapper) {
 		this.boardMapper = boardMapper;
-	}
+	}*/
 	
 	/*
 	 * 게시판 목록

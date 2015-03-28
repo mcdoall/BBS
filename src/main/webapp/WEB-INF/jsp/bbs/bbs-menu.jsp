@@ -4,7 +4,7 @@
 <ul>
 	<li>
 		<ul>
-			<li><a href="list?boardCd=free">자유게시판</a></li>
+			<li><a href="list?boardCd=free">자유게시판ㅜㅜㅜㅜ</a></li>
 			<li><a href="list?boardCd=qna">QnA게시판</a></li>
 			<li><a href="list?boardCd=data">자료실</a></li>
 		</ul>

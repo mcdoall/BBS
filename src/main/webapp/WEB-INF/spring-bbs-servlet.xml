@@ -1,26 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc
-		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://mybatis.org/schema/mybatis-spring 
+		http://mybatis.org/schema/mybatis-spring.xsd">
+		
 	
 	<!-- 스프링의 DispatcherServet에게 정적인 자원을 알려준다.  -->
 	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
 			
-	<!-- HandlerMapping -->
-	<!--  정의 없음. BeanNameUrlHandlerMapping이 적용된다. -->
+	<mvc:annotation-driven />
+	<context:component-scan
+		base-package="net.java_school.board,
+		net.java_school.board.spring" />
 	
-	<bean id="listController" name ="/bbs/list" 
+	<mybatis:scan base-package="net.java_school.mybatis" />
+			
+<!-- 	HandlerMapping 
+	<bean id="handlerMapping" 
+	  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+	  <property name="mappings">
+	    <value>
+		/bbs/list=listController
+	    </value>
+	  </property>
+		
+	</bean>
+	
+	<bean id="listController" 
 		class="net.java_school.board.spring.ListController"
-			p:boardService-ref="boardService" />
+			p:boardService-ref="boardService" /> -->
 	
 	<!-- ViewResolver -->
-	<!--  정의 없음. InternalResourceViewResolver이 적용된다. -->
+	<bean id="internalResourceViewResolver" 
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>	
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -39,14 +73,14 @@
 		<property name="configLocation" value="classpath:net/java_school/mybatis/Configuration.xml" />
 	</bean>
 	
-	<bean id="boardMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+<!-- 	<bean id="boardMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="net.java_school.mybatis.BoardMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
-	<!-- BoardService -->
+	BoardService
 	<bean id="boardService" class="net.java_school.board.BoardServiceImpl">
 		<property name="boardMapper" ref="boardMapper" />
-	</bean>
+	</bean> -->
 
 </beans>

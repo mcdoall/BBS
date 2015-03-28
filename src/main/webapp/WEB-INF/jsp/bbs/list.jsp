@@ -145,7 +145,7 @@
 		<p>
 			<input type="hidden" name="boardCd" value="${boardCd }" />
 			<input type="hidden" name="curPage" />
-			<input type="hidden" name="searchWord" value="${param.searchWord }" />
+			<input type="text" name="searchWord" value="${param.searchWord }" />
 		</p>
 		</form>
 		<form id="viewForm" action="./view" method="get">
@@ -156,7 +156,7 @@
 			<input type="hidden" name="searchWord" value="${param.searchWord }" />
 		</p>
 		</form>
-		<form id="writeForm" action="./write" method="get">
+		<form id="writeForm" action="./moveToWriteForm" method="post">
 		<p>
 			<input type="hidden" name="boardCd" value="${boardCd }" />
 			<input type="hidden" name="curPage" value="${curPage }" />
