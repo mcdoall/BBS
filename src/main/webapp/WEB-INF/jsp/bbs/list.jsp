@@ -43,6 +43,8 @@
 
 	<div id="header">
 		<%@ include file="../inc/header.jsp" %>
+		<%-- <%@ include file="NewFile.html" %> --%>
+		
 	</div>
 
 	<div id="main-menu">
@@ -110,6 +112,8 @@
 		<input type="button" value="새글쓰기" onclick="goWrite()" />
 	</div>
 
+<!-- <img src="../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/> -->
+<!-- <img src="../images/logo.png" alt="java-sch1123ool.net" /> -->
 	<div id="search" style="text-align: center;">
 		<form id="searchForm" action="./list" method="get" style="margin: 0;padding: 0;">
 			<p style="margin: 0;padding: 0;">
@@ -130,10 +134,10 @@
 		<%@ include file="bbs-menu.jsp" %>
 	</div>
 	
-	<div id="extra">
+<%-- 	<div id="extra">
 		<%@ include file="../inc/extra.jsp" %>
 	</div>
-
+ --%>
 	<div id="footer">
 		<%@ include file="../inc/footer.jsp" %>
 	</div>
