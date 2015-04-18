@@ -26,6 +26,12 @@
 	<context:component-scan
 		base-package="net.java_school.board,
 		net.java_school.board.spring" />
+		
+		<context:component-scan 
+	base-package="net.java_school.board,
+		net.java_school.board.spring,
+		net.java_school.user,
+		net.java_school.user.spring" />
 	
 	<mybatis:scan base-package="net.java_school.mybatis" />
 			
@@ -61,9 +67,9 @@
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL"/>
-		<property name="username" value="java"/>
-		<property name="password" value="school"/>
+		<property name="url" value="jdbc:oracle:thin:@192.168.100.101:1521:ORCL"/>
+		<property name="username" value="JAVA"/>
+		<property name="password" value="JAVA"/>
 		<property name="maxActive" value="100"/>
 		<property name="maxWait" value="1000"/>
 		<property name="poolPreparedStatements" value="true"/>

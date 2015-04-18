@@ -12,6 +12,9 @@ import net.java_school.board.Comment;
 import net.java_school.board.BoardService;
 import net.java_school.commons.PagingHelper;
 import net.java_school.commons.WebContants;
+import javax.servlet.http.HttpSession;
+import net.java_school.user.User;
+import net.java_school.commons.WebContants;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +36,15 @@ public class BbsController {
 			String boardCd, 
 			Integer curPage, 
 			String searchWord, 
-			Model model) throws Exception {
+			Model model,
+			HttpSession session) throws Exception {
+		
+//				//login check
+//				User user = (User) session.getAttribute(WebContants.USER_KEY);
+//				if (user == null) {
+//					return "redirect:/users/login";
+//				}
+
 			
 		if (boardCd == null) boardCd = "free";
 		if (curPage == null) curPage = 1;
@@ -71,7 +82,8 @@ public class BbsController {
 		model.addAttribute("curPage", curPage);//curPage는 null 값이면 1로 만들어야 하므로
 		model.addAttribute("boardCd", boardCd);//boardCd는 null 값이면 free로 만들어야 하므로
 		
-		return "bbs/test";
+		//return "bbs/test";
+		return "bbs/list";
 		
 		
 	}
@@ -218,9 +230,15 @@ public class BbsController {
 			String boardCd, 
 			Integer curPage, 
 			String searchWord, 
-			String memo) throws Exception {
+			String memo,
+			HttpSession session) throws Exception {
 			
 		Comment comment = boardService.getComment(commentNo);
+		// login check and writer check
+				User user = (User) session.getAttribute(WebContants.USER_KEY);
+				if (user == null || !comment.getEmail().equals(user.getEmail())) {
+					return "redirect:/users/login";
+				}
 		comment.setMemo(memo);
 		boardService.updateComment(comment);
 		
@@ -315,7 +333,41 @@ public class BbsController {
 			+ "&searchWord=" + searchWord;
 
 	}
+	
+	@RequestMapping(value="/attachFileDel", method=RequestMethod.POST)
+	public String attachFileDel(Integer attachFileNo, 
+			Integer articleNo, 
+			String boardCd, 
+			Integer curPage, 
+			String searchWord) throws Exception {
+		
+		boardService.deleteFile(attachFileNo);
+		
+		searchWord = URLEncoder.encode(searchWord,"UTF-8");
+		
+		return "redirect:/bbs/view?articleNo=" + articleNo + 
+			"&boardCd=" + boardCd + 
+			"&curPage=" + curPage + 
+			"&searchWord=" + searchWord;
+
+	}
 	//end
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String delete(Integer articleNo, 
+			String boardCd, 
+			Integer curPage, 
+			String searchWord) throws Exception {
+		
+		boardService.delete(articleNo);
+
+		searchWord = URLEncoder.encode(searchWord, "UTF-8");
+		
+		return "redirect:/bbs/list?boardCd=" + boardCd + 
+			"&curPage=" + curPage + 
+			"&searchWord=" + searchWord;
+
+	}
+	
 	
 	@RequestMapping(value="/moveToWriteForm", method=RequestMethod.POST)
 	public String moveToWriteForm(Article article) {

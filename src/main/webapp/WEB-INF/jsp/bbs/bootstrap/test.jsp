@@ -97,14 +97,14 @@
       	<p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
 		
 		
-		      <c:forEach var="article" items="${list }" varStatus="status">
+		  <%--     <c:forEach var="article" items="${list }" varStatus="status">
 		      		<!-- <div class="row"> -->
 		      			<div class="col-md-4">${no - status.index}</div>
 		      			<div class="col-md-4">${article.title}</div>
 		      			<div class="col-md-4">${article.hit}</div>
 		      		<!-- </div> -->
 			  </c:forEach>
-				
+				 --%>
 				<div class="row">
 				</div>
 				<table class="table table-striped">
@@ -196,6 +196,6 @@
 	}
   
     </script>
-  
+    <script type="text/javascript" src="./assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
 
 </body></html>
