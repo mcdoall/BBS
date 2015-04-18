@@ -131,7 +131,7 @@ public class BbsController {
 		model.addAttribute("curPage", curPage);//curPage는 null 값이면 1로 만들어야 하므로
 		model.addAttribute("boardCd", boardCd);//boardCd는 null 값이면 free로 만들어야 하므로
 		
-		return "bbs/list";
+		return "bbs/bootstrap/dashboard";
 		
 	}
 	
