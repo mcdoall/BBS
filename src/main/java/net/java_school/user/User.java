@@ -6,7 +6,17 @@ public class User {
 	private String name;
 	private String mobile;
 	
-	public User() {}
+	
+	public User() {
+		
+	}
+	
+	//추가함
+	public void login(String email, String passwd) {
+		this.email = email;
+		this.passwd = passwd;
+	}
+	//추가끝
 
 	public User(String email, String passwd, String name, String mobile) {
 		this.email = email;

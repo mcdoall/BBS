@@ -11,7 +11,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="http://bootstrapk.com/favicon.ico">
-
+	
+	<!-- DataTables CSS --><link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">  
+	
+	
     <title>euani</title>
 
     <!-- Bootstrap core CSS -->
@@ -49,6 +52,8 @@
 						<td>${article.hit}</td>
 					</tr>
 				  </c:forEach>
+				</table>
+				<table id=example>
 				</table>						
 				<input type="button" value="새글쓰기" class="btn btn-default" onclick="goWrite()" />
    		
@@ -64,6 +69,8 @@
 	</form>
 	<!-- </div> -->
 	
+	<!-- jQuery --><script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
+	<!-- DataTables --><script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript">
@@ -73,8 +80,17 @@
 		//alert("1234");		
 		form.submit();
 	}
-  
+	
+    $(document).ready( function () {    $('#table_id').DataTable();} );
+    
+    var data = [[        "Tiger Nixon",        "System Architect",        "Edinburgh",        "5421",        "2011/04/25",        "$3,120"    ],    
+                [        "Garrett Winters",        "Director",        "Edinburgh",        "8422",        "2011/07/25",        "$5,300"    ]]
+    
+    $('#example').DataTable( {    data: data} );
+    
     </script>
     <script type="text/javascript" src="./assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-
+	
+	
+	
 </body></html>
