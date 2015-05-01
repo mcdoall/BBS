@@ -22,16 +22,22 @@
 	<mvc:resources location="/png/" mapping="/img/**" />
 	<mvc:resources location="/jpg/" mapping="/img/**" />
 			
+<!-- 	<context:component-scan base-package="net.java_school.board.spring" /> 설정은 어노테이션이 적용된 컴포넌트를 찾아 자동으로 등록한다.(여기서 컴포넌트란 dao, service, 컨트롤러를 의미한다.)
+이 설정으로 구체적인 핸들러 매핑 클래스에 대한 설정,즉 spring-bbs-servlet.xml 에서 컨트롤러에 대한 설정이 없어도 되는 것이다.
+<mvc:annotation-driven /> 설정은 스프링 MVC 에서 필요한 어노테이션 기반의 모든 기능을 사용할 수 있도록 한다.
+<context:component-scan 은 <mvc:annotation-driven /> 과 함께 쓰지 않으면 작동하지 않는다. -->
+			
 	<mvc:annotation-driven />
-	<context:component-scan
+	<!-- <context:component-scan
 		base-package="net.java_school.board,
-		net.java_school.board.spring" />
+		net.java_school.board.spring" /> -->
 		
 		<context:component-scan 
 	base-package="net.java_school.board,
 		net.java_school.board.spring,
 		net.java_school.user,
-		net.java_school.user.spring" />
+		net.java_school.user.spring,
+		net.java_school.main" />
 	
 	<mybatis:scan base-package="net.java_school.mybatis" />
 			

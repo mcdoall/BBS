@@ -14,7 +14,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	
-$("button#test").click(function(){
+ $("button#test").click(function(){
 	
 	var id = $("input#id").val();
 	var pw = $("input#pw").val();
@@ -22,8 +22,7 @@ $("button#test").click(function(){
 	alert(id);
 	alert(pw);
 
-//	alert('1234');
-});
+}); 
 
 });
 </script>        
@@ -46,8 +45,8 @@ $("button#test").click(function(){
 
 <!-- 본문 시작 -->
 <h1>로그인</h1>
-<!-- <form id="loginForm" action="login" method="post" onsubmit="return login()"> -->
-<form id="loginForm" action="login" method="post" >
+<form id="loginForm" action="login" method="post" onsubmit="return login()">
+<!-- <form id="loginForm" action="loginTo" method="post" > -->
 <table>
 <tr>
 	<td style="width: 200px;">아이디</td>

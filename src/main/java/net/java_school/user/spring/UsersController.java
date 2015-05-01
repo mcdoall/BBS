@@ -19,7 +19,7 @@ public class UsersController {
 	
 	@RequestMapping(value="/signUp", method=RequestMethod.GET)
 	public String signUp() {
-		System.out.println("testsetstsetstes1111111t");
+		
 		return "users/signUp";
 	}
 	
@@ -31,22 +31,24 @@ public class UsersController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login() {
-		System.out.println("testsetstsetstest");
+		
 		return "users/login";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(String email, String passwd, HttpSession session) throws Exception {
-		System.out.println(email);
-		System.out.println(passwd);
-		User loginUser = userService.login(email, passwd);
+				
+		User loginUser = userService.login(email, passwd);	
+		
 		if (loginUser != null) {
-			System.out.println("notnulltestpass");
 			session.setAttribute("user", loginUser);
 			return "users/changePasswd";
+			//return "/bbs/list";
+
 		} else {
-			System.out.println("notnulltestfail");
+			
 			return "users/login";
+			
 		}
 	}
 		
