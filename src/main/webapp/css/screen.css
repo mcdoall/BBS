@@ -102,6 +102,32 @@ ul#nav li a:hover {
 	line-height: 19px;
 }
 
+
+#main_div_content {
+	width: 390px;
+	margin-left: 180px;
+	margin-right: 0px;
+	padding-left: 9px;
+	padding-right: 9px;
+	border-left: 1px solid #DAEAAA;
+	border-right: 1px solid #DAEAAA;
+	font-size: 13px;
+	line-height: 19px;
+}
+
+#main_div_content_right {
+	width: 390px;	
+	margin-right: 0px;
+	padding-left: 9px;
+	padding-right: 0px;	
+	border-right: 1px solid #DAEAAA;
+	font-size: 13px;
+	line-height: 19px;
+}
+
+
+
+
 #url-navi {
 	margin: 0;
 	padding-top: 10px;

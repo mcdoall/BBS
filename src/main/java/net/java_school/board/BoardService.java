@@ -12,6 +12,11 @@ public interface BoardService {
 	public ArrayList<Article> getArticleList(String boardCd, String searchWord, int start, int end);
 	
 	/*
+	 * 게시판 목록
+	 */
+	public ArrayList<Article> getMainArticleList_1(String boardCd, int start, int end);
+	
+	/*
 	 * 특정 게시판의 총 게시물 갯수 구하기
 	 */
 	public int getTotalRecord(String boardCd, String searchWord);

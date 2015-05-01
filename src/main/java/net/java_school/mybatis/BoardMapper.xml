@@ -5,6 +5,26 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="net.java_school.mybatis.BoardMapper">
+	
+	<select id="getMainArticleList_1" parameterType="hashmap" resultType="Article">
+	    SELECT articleno, title, regdate, hit,  commentNum 
+    FROM (
+        SELECT rownum r,a.* 
+            FROM (
+                SELECT 
+                    a.articleno articleno, a.title, a.regdate, a.hit,                     
+                    count(distinct(c.commentno)) commentNum
+                FROM 
+                    article a,  comments c
+                WHERE                    
+                    a.articleno = c.articleno(+) AND
+                    a.boardcd = #{boardCd}                    
+                GROUP BY a.articleno, title, a.regdate, hit
+                ORDER BY articleno DESC
+                ) a
+        )
+    WHERE r BETWEEN #{start} AND #{end}
+	</select>
 
 	<select id="getArticleList" parameterType="hashmap" resultType="Article">
 	SELECT articleno, title, regdate, hit, attachfileNum, commentNum 

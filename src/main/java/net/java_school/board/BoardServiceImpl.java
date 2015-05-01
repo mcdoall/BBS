@@ -18,6 +18,22 @@ public class BoardServiceImpl implements BoardService {
 		this.boardMapper = boardMapper;
 	}*/
 	
+	
+	/*
+	 * 메인게시판 목록1
+	 */
+	public ArrayList<Article> getMainArticleList_1(String boardCd, int start, int end) {
+		Integer startRownum = start;
+		Integer endRownum = end;
+		HashMap<String, String> hashmap = new HashMap<String, String>();
+		hashmap.put("boardCd", boardCd);		
+		hashmap.put("start", startRownum.toString());
+		hashmap.put("end", endRownum.toString());
+		
+		return boardMapper.getMainArticleList_1(hashmap);
+	}
+	
+	
 	/*
 	 * 게시판 목록
 	 */

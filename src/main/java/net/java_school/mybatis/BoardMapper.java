@@ -9,6 +9,12 @@ import net.java_school.board.Board;
 import net.java_school.board.Comment;
 
 public interface BoardMapper {
+	
+	/*
+	 * 메인게시판 목록1
+	 */
+	public ArrayList<Article> getMainArticleList_1(HashMap<String, String> hashmap);	
+	
 	/*
 	 * 게시판 목록
 	 */
