@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <h1 style="float: left;width: 150px;">
-<a href="../main/list">
-<img src="../images/logo.gif" alt="java-school logo" />
+<a href="../main/mainList">
+<img src="../images/ci.gif" alt="java-school logo" />
 </a>
 </h1>
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
@@ -13,6 +13,7 @@
 		<input type="button" value="회원가입" onclick="location.href='../users/signUp'" />
 	</c:when>
 	<c:otherwise>
+	${user.name} 님 환영합니다.
 		<input type="button" value="로그아웃" onclick="location.href='../users/logout'" />
 		<input type="button" value="내정보수정" onclick="location.href='../users/editAccount'" />
 	</c:otherwise>

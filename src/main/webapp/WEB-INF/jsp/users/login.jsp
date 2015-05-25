@@ -50,11 +50,11 @@ $(document).ready(function(){
 <table>
 <tr>
 	<td style="width: 200px;">아이디</td>
-	<td style="width: 390px"><input id="id" type="text" name="email" style="width: 99%;" /></td>
+	<td style="width: 390px"><input id="id" type="text" name="email" style="width: 99%;" value="test"/></td>
 </tr>
 <tr>
 	<td>비밀번호(Password)</td>
-	<td><input id="pw" type="password" name="passwd" style="width: 99%;" /></td>
+	<td><input id="pw" type="password" name="passwd" style="width: 99%;" value="1234"/></td>
 </tr>
 </table>
 <div style="text-align: center;padding-bottom: 15px;">

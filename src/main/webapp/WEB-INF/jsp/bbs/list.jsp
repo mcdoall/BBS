@@ -131,7 +131,7 @@
 	</div><!--  container 끝 -->
 	
 	<div id="sidebar">
-		<%@ include file="bbs-menu.jsp" %>
+		<%@ include file="../inc/bbs-menu.jsp" %>
 	</div>
 	
 <%-- 	<div id="extra">

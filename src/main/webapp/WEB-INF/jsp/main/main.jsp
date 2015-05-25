@@ -193,7 +193,7 @@
 
 
 		<div id="sidebar">
-			<%@ include file="../bbs/bbs-menu.jsp"%>
+			<%@ include file="bbs-menu.jsp" %>
 		</div>
 
 		<%-- <div id="extra">

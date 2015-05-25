@@ -33,7 +33,7 @@ public class MainPageController {
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping(value="/list", method={RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/mainList", method={RequestMethod.GET, RequestMethod.POST})
 	public String list(
 			String boardCd, 
 			Integer curPage, 

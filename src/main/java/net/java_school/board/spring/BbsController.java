@@ -385,7 +385,8 @@ public class BbsController {
 	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(Article article) {
-		article.setEmail("bond007@gmail.org");
+		
+		//article.setEmail("bond007@gmail.org");
 		boardService.insert(article);
 		return "redirect:/bbs/list?boardCd=" + article.getBoardCd();
 	}

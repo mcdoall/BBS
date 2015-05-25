@@ -88,9 +88,9 @@
 		<%@ include file="bbs-menu.jsp" %>
 	</div>
 	
-	<div id="extra">
+	<%-- <div id="extra">
 		<%@ include file="../inc/extra.jsp" %>
-	</div>
+	</div> --%>
 
 	<div id="footer">
 		<%@ include file="../inc/footer.jsp" %>

@@ -1,0 +1,18 @@
+╔════════════════════════════════════════════════╗
+╟─────┤Rescue Dawn (2006) 1080p 5.1 Blu-ray├─────╢
+╚════════════════════════════════════════════════╝
+
+TITLE: Rescue Dawn (ID: tt0462504)
+YEAR: 2006
+LANGUAGE: English
+SUBTITLES: English & Spanish
+
+SOURCE: Blu-ray|MPEG-4 AVC (Uncompressed)
+
+VIDEO: H.264@2470Kbps [High@L4.0|VERYSLOW|ME=UMH/24|SubME=10|Deblock -1:-1]
+AUDIO TRACK: English HE-AAC/LC 5.1|6ch [384Kbps/48KHz]
+CONTAINER: MP4
+RESOLUTION: 1920 x 1040 ( 1.85 : 1 )
+RUN-TIME: 02:05:23
+
+SYNOPSIS: A US Fighter pilot's epic struggle of survival after being shot down on a mission over Laos during the Vietnam War.
